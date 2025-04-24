@@ -4,12 +4,12 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Colors from '../theme/Colors';
 
-const SettingsContainer = ({ titleColor, iconName, title, value, onToggle, showArrow = false, subtitle, onPress }) => {    
+const SettingsContainer = ({ titleColor, iconName, title, value, onToggle, showArrow = false, subtitle, onPress,containerStyle, }) => {    
     return (
         <TouchableOpacity
             activeOpacity={0.7}
             onPress={onPress} // Handle press events
-            style={{
+            style={[{
                 width: wp(100),
                 height: 45,
                 borderWidth: 1,
@@ -20,7 +20,7 @@ const SettingsContainer = ({ titleColor, iconName, title, value, onToggle, showA
                 paddingHorizontal: wp(4),
                 backgroundColor: '#fff',
                 marginTop: 10,
-            }}
+            },containerStyle]}
         >
             {/* Left Icon & Text */}
             <View style={{ flexDirection: 'row', alignItems: 'center', flex: 1 }}>

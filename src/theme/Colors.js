@@ -24,7 +24,7 @@ const Colors = {
     outline: 'rgb(116, 119, 127)',
     outlineVariant: 'rgb(195, 198, 207)',
     shadow: 'rgb(0, 0, 0)',
-    scrim: 'rgb(0, 0, 0)',
+    black: 'rgb(0, 0, 0)',
     inverseSurface: 'rgb(47, 48, 51)',
     inverseOnSurface: 'rgb(241, 240, 244)',
     inversePrimary: 'rgb(166, 200, 255)',

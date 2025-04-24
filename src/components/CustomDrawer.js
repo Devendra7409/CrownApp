@@ -25,7 +25,6 @@ const CustomDrawer = (props) => {
 
   const user = useSelector((state) => state.patientAuth.user);
 
-  console.log("user",user);
   
 
 

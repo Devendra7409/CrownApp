@@ -19,7 +19,6 @@ const DentistCustomDrawer = (props) => {
 
   const user = useSelector((state) => state?.doctorAuth.user);
 
-  console.log("user",user);
   
 
 
