@@ -21,6 +21,7 @@ import Payment from '../screens/Patient/Payment';
 import Settings from '../screens/Patient/Settings';
 import HelpCenter from '../screens/Patient/HelpCenter';
 import TermsAndConditions from '../screens/Patient/TermsAndConditions';
+import DentistSearch from '../screens/Patient/DentistSearch';
 
 //Import Dentist screens here
 import DentistHomeScreen from '../screens/Dentist/DentistHomeScreen';
@@ -28,6 +29,7 @@ import DentistAppointments from '../screens/Dentist/DentistAppointments';
 import DentistProfile from '../screens/Dentist/DentistProfile';
 import DentistCustomDrawer from '../components/DentistCustomDrawer';
 import Notification from '../screens/Dentist/Notification';
+
 
 
 
@@ -62,6 +64,7 @@ export const PatientDrawerNavigator = () => (
     <Drawer.Screen name='termsAndConditions' component={TermsAndConditions} />
     <Drawer.Screen name="Profile" component={ProfileScreen} />
     <Drawer.Screen name="notification" component={NotificationScreen} />
+    <Drawer.Screen name="dentistSearch" component={DentistSearch} />
   </Drawer.Navigator>
 );
 

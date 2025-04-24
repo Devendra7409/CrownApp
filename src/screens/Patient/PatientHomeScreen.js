@@ -8,6 +8,7 @@ import SymptomCard from '../../components/SymptomCard';
 import SpecialistCard from '../../components/SpecialistCard';
 import Colors from '../../theme/Colors';
 import AppointmentCard from '../../components/AppointmentCard';
+import CommonSearchView from '../../components/CommonSearchView';
 
 const MOCK_SYMPTOMS = [
   { id: '1', title: 'Tooth Pain', icon: require('../../assets/book_my_appointment.png') },
@@ -90,16 +91,22 @@ const PatientHomeScreen = ({ navigation }) => {
         title=""
         onMenuPress={() => navigation.openDrawer()}
         showProfile={true}
-        onNotificationPress={()=>navigation.navigate('notification')}
+        onNotificationPress={() => navigation.navigate('notification')}
       />
 
       <ScrollView style={styles.content} showsVerticalScrollIndicator={false}>
-        <SearchBar
+        {/* <SearchBar
           placeholder="Search doctors, clinics..."
           value={searchQuery}
           onChangeText={setSearchQuery}
           onClear={() => setSearchQuery('')}
           containerStyle={styles.searchBar}
+        /> */}
+
+        <CommonSearchView
+          placeholder="Search doctors, clinics..."
+          containerStyle={styles.searchBar}
+          onClick={() => navigation.navigate('dentistSearch')}
         />
 
         <View style={styles.appointmentCardsContainer}>

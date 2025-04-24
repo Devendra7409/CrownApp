@@ -1,7 +1,7 @@
 import { ActivityIndicator, TouchableOpacity, Text, StyleSheet } from 'react-native';
 import React from 'react';
 
-const CommonButton = ({ title, onPress, colors, loading, disabled,style = {}, }) => {
+const CommonButton = ({ title,titleStyle, onPress, colors, loading, disabled,style = {}, }) => {
   return (
     <TouchableOpacity
       style={[styles.button, { backgroundColor: disabled ? '#ccc' : colors[0] },style,]}
@@ -11,7 +11,7 @@ const CommonButton = ({ title, onPress, colors, loading, disabled,style = {}, })
       {loading ? (
         <ActivityIndicator size="small" color="#fff" />
       ) : (
-        <Text style={styles.text}>{title}</Text>
+        <Text style={[styles.text,titleStyle]}>{title}</Text>
       )}
     </TouchableOpacity>
   );
