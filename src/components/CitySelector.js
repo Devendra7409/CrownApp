@@ -23,7 +23,7 @@ const CitySelector = ({ onCitySelect }) => {
     return (
         <View style={styles.container}>
             {/* Popular Cities Header */}
-            <Text style={styles.header}>Popular</Text>
+            <Text style={styles.header}>Popular Cities</Text>
             <FlatList
                 horizontal
                 data={popularCities}
