@@ -7,12 +7,21 @@ import { widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import Colors from '../../theme/Colors';
 import CitySelector from '../../components/CitySelector';
 import CommonButton from '../../components/CommonButton';
+import CommonDropdown from '../../components/CommonDropdown';
+
+const locationList = [
+    { label: 'Area 1', value: 'area1' },
+    { label: 'Area 2', value: 'area2' },
+    { label: 'Area 3', value: 'area3' },
+];
+
 
 const DentistSearch = () => {
     const navigation = useNavigation();
     const [showCitySelector, setShowCitySelector] = useState(false);
     const [selectedCity, setSelectedCity] = useState('');
-    console.log("selectedCity", selectedCity);
+    const [selectedLocation, setSelectedLocation] = useState(null);
+
 
 
     const handleCityPress = () => {
@@ -22,6 +31,8 @@ const DentistSearch = () => {
     useFocusEffect(
         React.useCallback(() => {
             setShowCitySelector(false);
+            setSelectedCity('');
+            setSelectedLocation(null);
         }, [])
     );
 
@@ -42,11 +53,17 @@ const DentistSearch = () => {
                 </View>
             )}
 
-            <SettingsContainer
-                title="Location Wise"
-                onPress={() => ''}
-                containerStyle={styles.containerStyle}
-            />
+                <CommonDropdown
+                    data={locationList}
+                    value={selectedLocation}
+                    onChange={(item) => {
+                        setSelectedLocation(item.value);
+                    }}
+                    placeholder={selectedLocation
+                        ? locationList.find(item => item.value === selectedLocation)?.label
+                        : 'Location Wise'}
+                />
+
             <SettingsContainer
                 title="Problem Wise"
                 onPress={() => ''}
@@ -56,9 +73,9 @@ const DentistSearch = () => {
             <CommonButton
                 title="Search"
                 colors={['#303234', '#626364']}
-                titleStyle={{color:Colors.black}}
-                onPress={()=>navigation.navigate('Home')}
-                style={[styles.containerStyle, { marginTop: 50,backgroundColor:Colors.primary }]}
+                titleStyle={{ color: Colors.black }}
+                onPress={() => navigation.navigate('dentistClinicList')}
+                style={[styles.containerStyle, { marginTop: 50, backgroundColor: Colors.primary }]}
             />
         </View>
     );

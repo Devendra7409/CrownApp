@@ -4,7 +4,7 @@ apply plugin: "com.facebook.react"
 apply from: file("../../node_modules/react-native-vector-icons/fonts.gradle")
 
 project.ext.vectoricons = [
-    iconFontNames: [ 'AntDesign.ttf', 'EvilIcons.ttf','MaterialCommunityIcons.ttf','Fontisto.ttf' ] // Specify font files
+    iconFontNames: [ 'AntDesign.ttf', 'EvilIcons.ttf','MaterialCommunityIcons.ttf','Fontisto.ttf','MaterialIcons.ttf','Ionicons.ttf','FontAwesome.ttf','Entypo.ttf','Feather.ttf','FontAwesome5.ttf','FontAwesome5Brands.ttf','' ] // Specify font files
 ]
 
 /**
